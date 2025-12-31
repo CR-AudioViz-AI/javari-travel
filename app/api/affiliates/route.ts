@@ -308,7 +308,7 @@ export async function GET(request: NextRequest) {
         affiliates: Object.keys(AFFILIATES).length,
         destinations: Object.keys(DESTINATIONS).length,
         ecosystemApps: Object.keys(ECOSYSTEM_APPS).length,
-        categories: [...new Set(Object.values(AFFILIATES).map(a => a.category))],
+        categories: Array.from(new Set(Object.values(AFFILIATES).map(a => a.category))),
         providers: Object.entries(AFFILIATES).map(([k, v]) => ({
           id: k,
           name: v.name,
