@@ -48,7 +48,7 @@ export function BrandedHeader({ appName, appLogo, quickLinks = [] }: BrandedHead
         const creditsResult = await CentralServices.Credits.getBalance();
         if (creditsResult.success) {
           setCredits(creditsResult.data?.balance || 0);
-          setPlan(creditsResult.data?.plan || 'free');
+          setPlan(creditsResult.data?.tier || 'free');
         }
       }
     } catch (error) {
