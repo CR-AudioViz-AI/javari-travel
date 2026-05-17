@@ -1,34 +1,34 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import EcosystemNav from '@/components/ecosystem/EcosystemNav'
-import EcosystemFooter from '@/components/ecosystem/EcosystemFooter'
-
-
-const inter = { className: 'font-sans' }; // system font fallback
-;
+// app/layout.tsx — Javari Travel
+// Fortune 50 quality — uses AppShell for full ecosystem integration
+// May 17, 2026 — CR AudioViz AI, LLC
+import type { Metadata } from 'next'
+import './globals.css'
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'CRAVTravel - AI-Powered Travel Deals Worldwide',
-  description: 'Find the best travel deals with AI price predictions. Hotels, flights, and vacation packages at unbeatable prices.',
-  keywords: 'travel deals, cheap flights, hotel discounts, vacation packages, AI travel, price predictions',
-  openGraph: {
-    title: 'CRAVTravel - Travel Smarter',
-    description: 'AI-powered travel deals across the globe',
-    url: 'https://cravtravel.com',
-    siteName: 'CRAVTravel',
-    type: 'website',
-  },
-};
+  title: 'Javari Travel | Javari by CR AudioViz AI',
+  description: 'AI-powered travel planning',
+  keywords: 'Javari Travel, Javari, AI, CR AudioViz AI',
+}
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+import AppShell from '@/components/AppShell'
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}><EcosystemNav appName="Javari Travel" />{children}<EcosystemFooter /></body>
+      <body style={{ margin: 0, padding: 0 }}>
+        <AppShell
+          appName="Javari Travel"
+          appColor="#06b6d4"
+          appEmoji="✈️"
+          appDesc="AI-powered travel planning"
+      handoffApp="Orlando Trip Deal"
+      handoffUrl="https://orlandotripdeal.com"
+      handoffPitch="Heading to Florida? Get the best Orlando deals →"
+        >
+          {children}
+        </AppShell>
+      </body>
     </html>
-  );
+  )
 }
