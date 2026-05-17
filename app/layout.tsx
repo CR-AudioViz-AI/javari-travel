@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import EcosystemNav from '@/components/ecosystem/EcosystemNav'
+import EcosystemFooter from '@/components/ecosystem/EcosystemFooter'
+
 
 const inter = { className: 'font-sans' }; // system font fallback
 ;
@@ -25,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}><EcosystemNav appName="Javari Travel" />{children}<EcosystemFooter /></body>
     </html>
   );
 }
