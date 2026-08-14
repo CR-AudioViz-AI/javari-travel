@@ -111,11 +111,11 @@ export default function TravelHome() {
         <h2 style={{ textAlign: "center", fontSize: "clamp(18px,3vw,28px)", fontWeight: 800, color: "#fff", margin: "0 0 32px" }}>All Travel Tools</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 12 }}>
           {TOOLS.map(t => (
-            <a key={t.href} href={t.href} style={{ background: "#0F1F32", border: "1px solid rgba(0,180,216,0.08)", borderRadius: 14, padding: "18px 16px", textDecoration: "none", display: "block" }}>
+            <div key={t.href} style={{ background: "#0F1F32", border: "1px solid rgba(0,180,216,0.08)", borderRadius: 14, padding: "18px 16px", textDecoration: "none", display: "block" }}>
               <span style={{ fontSize: 26, display: "block", marginBottom: 8 }}>{t.icon}</span>
               <div style={{ fontWeight: 700, fontSize: 13, color: "#e2e8f0", marginBottom: 4 }}>{t.label}</div>
               <div style={{ fontSize: 11, color: "#6B7280", lineHeight: 1.4 }}>{t.desc}</div>
-            </a>
+            </div>
           ))}
         </div>
         <p style={{ textAlign: "center", marginTop: 24, fontSize: 11, color: "#374151" }}>
