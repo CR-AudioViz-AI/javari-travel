@@ -1,6 +1,6 @@
 /**
  * UNIVERSAL TRAVEL AFFILIATE API
- * CravTravel - CR AudioViz AI
+ * JavariTravel - CR AudioViz AI
  * 
  * Powers affiliate links for ANY destination
  * Cross-sells to real estate, insurance, and all ecosystem apps
@@ -78,7 +78,7 @@ const AFFILIATES = {
     name: "Skyscanner",
     baseUrl: "https://www.skyscanner.com",
     param: "associateId",
-    id: process.env.SKYSCANNER_AFFILIATE_ID || "crav",
+    id: process.env.SKYSCANNER_AFFILIATE_ID || "javari",
     commission: 0.01,
     category: "flights"
   }
@@ -167,8 +167,8 @@ const ECOSYSTEM_APPS = {
     cta: "Thinking of relocating? Search homes here!"
   },
   realtorCRM: {
-    name: "CravKey",
-    url: "https://cravkey.com", 
+    name: "Javari Keys",
+    url: "https://javarikeys.com", 
     description: "Realtor CRM for relocation specialists",
     trigger: "realtor-lead",
     cta: "Partner with local agents"
@@ -181,15 +181,15 @@ const ECOSYSTEM_APPS = {
     cta: "Protect your trip & future home"
   },
   barrels: {
-    name: "CravBarrels",
-    url: "https://cravbarrels.com",
+    name: "Javari Spirits",
+    url: "https://javarispirits.com",
     description: "Discover local distilleries and craft spirits",
     trigger: "destination-visit",
     cta: "Find local distillery tours"
   },
   games: {
-    name: "CravGamesHub",
-    url: "https://cravgameshub.com",
+    name: "Javari Games",
+    url: "https://javarigames.com",
     description: "Gaming and entertainment",
     trigger: "entertainment",
     cta: "Play while you wait"
@@ -323,7 +323,7 @@ export async function GET(request: NextRequest) {
 
     default:
       return NextResponse.json({
-        name: "CravTravel Universal Affiliate API",
+        name: "JavariTravel Universal Affiliate API",
         version: "1.0.0",
         actions: {
           destinations: "List all destinations",
@@ -353,7 +353,7 @@ export async function POST(request: NextRequest) {
           product,
           user_id,
           session_id,
-          source_app: source_app || "crav-travel",
+          source_app: source_app || "javari-travel",
           timestamp: new Date().toISOString()
         };
         
@@ -369,7 +369,7 @@ export async function POST(request: NextRequest) {
           target_app,
           destination,
           user_id,
-          source_app: source_app || "crav-travel",
+          source_app: source_app || "javari-travel",
           timestamp: new Date().toISOString()
         };
         
@@ -381,13 +381,13 @@ export async function POST(request: NextRequest) {
       case "realtor-lead": {
         const { destination, user_email, user_name, interest_type } = data;
         
-        // This would create a lead in CravKey for local realtors
+        // This would create a lead in Javari Keys for local realtors
         const lead = {
           destination,
           user_email,
           user_name,
           interest_type: interest_type || "relocation",
-          source: "crav-travel",
+          source: "javari-travel",
           timestamp: new Date().toISOString()
         };
         

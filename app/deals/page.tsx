@@ -87,7 +87,7 @@ export default function DealsPage() {
         originalPrice: 3499,
         currentPrice: 1899,
         savings: 46,
-        provider: 'CRAVTravel Exclusive',
+        provider: 'JavariTravel Exclusive',
         expiresAt: '2025-01-25',
       },
     ];
@@ -114,7 +114,7 @@ export default function DealsPage() {
       <header className="bg-white/5 backdrop-blur-sm border-b border-white/10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-white">
-            CRAV<span className="text-yellow-400">Travel</span>
+            Javari<span className="text-yellow-400">Travel</span>
           </Link>
           <nav className="flex gap-6">
             <Link href="/deals" className="text-yellow-400 font-medium">Deals</Link>

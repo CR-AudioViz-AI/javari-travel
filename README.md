@@ -1,4 +1,4 @@
-# CRAVTravel - Worldwide Travel Deals
+# JavariTravel - Worldwide Travel Deals
 
 **Part of the CR AudioViz AI Ecosystem**
 
@@ -16,7 +16,7 @@ A nationwide/worldwide travel deals platform that shares its core infrastructure
 
 | Platform | Focus | URL |
 |----------|-------|-----|
-| **CRAVTravel** | Worldwide | TBD |
+| **JavariTravel** | Worldwide | TBD |
 | Orlando Trip Deal | Florida/Theme Parks | [orlandotripdeal.com](https://orlandotripdeal.com) |
 
 ## 🏗️ Architecture

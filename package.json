@@ -1,7 +1,7 @@
 {
   "name": "javari-travel",
   "version": "1.0.0",
-  "description": "CRAVTravel - AI-Powered Worldwide Travel Deals",
+  "description": "JavariTravel - AI-Powered Worldwide Travel Deals",
   "private": true,
   "scripts": {
     "dev": "next dev",
