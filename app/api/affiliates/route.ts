@@ -68,7 +68,11 @@ const AFFILIATES = {
     name: "Booking.com",
     baseUrl: "https://www.booking.com",
     param: "aid",
-    id: process.env.BOOKING_AFFILIATE_ID || "2692370",
+    // 2026-08-18: the AWIN publisher id was hardcoded as a fallback. It is an
+    // ACCOUNT IDENTIFIER, not a safe default - publishing it invites link
+    // hijacking, and a literal fallback means a misconfigured deploy silently
+    // attributes traffic to the live account. No id, no link.
+    id: process.env.BOOKING_AFFILIATE_ID ?? null,
     commission: 0.04,
     category: "hotels"
   },
