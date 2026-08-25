@@ -12,7 +12,7 @@ const KLOOK_ID = '106921'  // Klook affiliate ID
 
 async function ai(prompt: string): Promise<string> {
   for (const [url, key, model] of [
-    ['https://api.groq.com/openai/v1/chat/completions', GROQ, 'llama-3.3-70b-versatile'],
+    ['https://api.groq.com/openai/v1/chat/completions', GROQ, 'openai/gpt-oss-20b'],
     ['https://openrouter.ai/api/v1/chat/completions', OR, 'deepseek/deepseek-r1-distill-llama-70b:free'],
   ] as const) {
     if (!key) continue

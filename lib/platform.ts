@@ -174,7 +174,22 @@ export const ai = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${OR}`, 'HTTP-Referer': PLATFORM },
           body: JSON.stringify({
-            model: 'deepseek/deepseek-v4-flash:free', max_tokens: 2048, temperature: 0.7,
+            // 2026-08-25: was deepseek/deepseek-v4-flash:free, which OpenRouter has
+            // RETIRED. Every free OpenRouter model tested today either returned 200 with
+            // EMPTY CONTENT (openai/gpt-oss-20b, poolside/laguna-s-2.1:free,
+            // dots-studio/dots-3-note-preview:free), leaked visible reasoning into the text
+            // (nvidia/nemotron-3.5-lightning:free begins "Here's a thinking process:"), or
+            // returned 503.
+            //
+            // So OpenRouter's free tier is not dependable for customer-facing prose right
+            // now. This tier is KEPT rather than removed because the guard below —
+            // `if (t.length > 10)` — already falls through on an empty response, so an
+            // unreliable tier costs a wasted call rather than a broken answer.
+            //
+            // GROQ BELOW IS THE REAL PRIMARY, using openai/gpt-oss-20b which WAS verified
+            // clean there with a real completion. The same model id behaves differently on
+            // the two providers, which is why each has to be tested where it will run.
+            model: 'openai/gpt-oss-20b', max_tokens: 2048, temperature: 0.7,
             messages: [...(system ? [{ role: 'system', content: system }] : []), { role: 'user', content: prompt }],
           }),
         })
@@ -191,7 +206,7 @@ export const ai = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${GROQ}` },
         body: JSON.stringify({
-          model: 'llama-3.3-70b-versatile', max_tokens: 2048,
+          model: 'openai/gpt-oss-20b', max_tokens: 2048,
           messages: [...(system ? [{ role: 'system', content: system }] : []), { role: 'user', content: prompt }],
         }),
       })

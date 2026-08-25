@@ -285,7 +285,7 @@ export const ai = {
       tasks: [{
         id: 'task-1', role: 'builder', objective: params.objective,
         inputs: [], outputs: ['result'], dependencies: [],
-        model: 'deepseek/deepseek-v4-flash:free',
+        model: 'openai/gpt-oss-20b',
         max_cost: 0, status: 'pending',
       }],
     }
