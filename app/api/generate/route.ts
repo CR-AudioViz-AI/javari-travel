@@ -32,7 +32,11 @@ export const maxDuration = 60
 
 const GROQ_API_KEY   = process.env.GROQ_API_KEY   ?? ''
 const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY ?? ''
-const CREDIT_COST    = 4
+// 2026-09-01: annotated as number. It was inferred as the literal type 4, so the
+// `CREDIT_COST === 0 ? 'FREE'` checks below were provably false and TypeScript said
+// so. The free-tier branch is real logic — this route is meant to advertise FREE when
+// the cost is zero — so the constant is widened rather than the branches deleted.
+const CREDIT_COST: number = 4
 const SYSTEM         = `You are an expert travel planner for CR AudioViz AI. Create comprehensive travel itineraries, packing lists, budget breakdowns, local tips, and travel guides for any destination worldwide.`
 const ACTIONS        = ["itinerary", "packing_list", "budget_breakdown", "local_tips", "hotel_recommendations", "restaurant_guide", "day_trip"]
 
