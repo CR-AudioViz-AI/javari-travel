@@ -171,7 +171,7 @@ export default function PricingPage() {
                 </div>
                 
                 <Link 
-                  href={plan.name === 'Business' ? '/contact' : '/signup'}
+                  href={plan.name === 'Business' ? 'https://craudiovizai.com/contact' : 'https://craudiovizai.com/auth/signup'}
                   className={`block text-center py-3 rounded-xl font-semibold transition mb-6 ${
                     plan.popular 
                       ? 'bg-purple-600 hover:bg-purple-500' 
