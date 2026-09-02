@@ -126,10 +126,10 @@ export default function PricingPage() {
               <span className="font-bold text-xl">Javari AI</span>
             </Link>
             <div className="flex items-center gap-4">
-              <Link href="/login" className="text-gray-400 hover:text-white transition">Login</Link>
-              <Link href="/signup" className="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg transition">
+              <a href="https://craudiovizai.com/auth/login" className="text-gray-400 hover:text-white transition">Login</a>
+              <a href="https://craudiovizai.com/auth/signup" className="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg transition">
                 Start Free
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -256,13 +256,13 @@ export default function PricingPage() {
           <p className="text-xl text-gray-300 mb-10">
             Start free with 50 credits. No credit card required.
           </p>
-          <Link 
-            href="/signup"
+          <a 
+            href="https://craudiovizai.com/auth/signup"
             className="inline-flex items-center gap-2 px-10 py-5 bg-white text-gray-900 hover:bg-gray-100 rounded-xl text-xl font-bold transition"
           >
             Start Your Free Trial
             <ArrowRight className="w-6 h-6" />
-          </Link>
+          </a>
         </div>
       </section>
       
